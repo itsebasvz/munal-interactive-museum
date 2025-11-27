@@ -20,17 +20,37 @@ export const museumData = {
           { direction: 'right', targetRoom: 'salaC', targetNode: 'index', icon: '/assets/icons/arrow-narrow-right.svg' }
         ],
         paintings: [
-          // We will add painting details here later
           {
-            id: 'painting_central',
-            x: 50, y: 50, // Percentage coordinates
-            title: 'Obras Centrales',
-            description: 'Descripción de las obras centrales...',
-            details: {
-              author: 'Autor Desconocido',
-              year: '1900',
-              technique: 'Óleo sobre tela'
-            }
+            id: 'grabados',
+            x: 10, y: 48, w: 8, h: 25,
+            targetNode: 'izquierda',
+            title: 'Grabados',
+            description: 'Colección de grabados...',
+            details: { author: 'Varios', year: 'Siglo XX', technique: 'Grabado' }
+          },
+          {
+            id: 'retrato_azul',
+            x: 37, y: 50, w: 14, h: 35,
+            targetNode: 'centro_izquierda',
+            title: 'Retrato Azul',
+            description: 'Retrato de mujer en tonos azules...',
+            details: { author: 'Desconocido', year: '1920', technique: 'Óleo' }
+          },
+          {
+            id: 'retrato_vestido',
+            x: 62, y: 50, w: 18, h: 38,
+            targetNode: 'centro_derecha',
+            title: 'Retrato con Vestido',
+            description: 'Mujer con vestido amplio...',
+            details: { author: 'Desconocido', year: '1915', technique: 'Óleo' }
+          },
+          {
+            id: 'retrato_hombre',
+            x: 87, y: 50, w: 12, h: 30,
+            targetNode: 'derecha',
+            title: 'Retrato de Hombre',
+            description: 'Retrato formal de caballero...',
+            details: { author: 'Desconocido', year: '1930', technique: 'Óleo' }
           }
         ]
       },

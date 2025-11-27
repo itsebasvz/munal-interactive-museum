@@ -97,13 +97,17 @@ export class SceneView {
                 hotspot.className = 'painting-hotspot';
                 hotspot.style.left = `${painting.x}%`;
                 hotspot.style.top = `${painting.y}%`;
-                hotspot.style.width = '10%'; // Default size, maybe configurable
-                hotspot.style.height = '15%';
+                hotspot.style.width = `${painting.w || 10}%`;
+                hotspot.style.height = `${painting.h || 15}%`;
                 hotspot.style.transform = 'translate(-50%, -50%)';
 
                 hotspot.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    this.tour.openDetail(painting.id);
+                    if (painting.targetNode) {
+                        this.tour.navigate({ target: painting.targetNode });
+                    } else {
+                        this.tour.openDetail(painting.id);
+                    }
                 });
 
                 container.appendChild(hotspot);
