@@ -1,0 +1,342 @@
+:root {
+  /* 1. El Entorno */
+  --color-wall-shadow: #0E2F44;
+  --color-wall-light: #1F5268;
+  --color-floor-light: #D99E4B;
+  --color-floor-shadow: #965F2B;
+
+  /* 2. Los Cuadros */
+  --color-painting-yellow: #CBB058;
+  --color-painting-indigo: #293B57;
+  --color-painting-olive: #4A5237;
+  --color-painting-charcoal: #2F3235;
+  --color-painting-blue-gray: #6E8CA0;
+  --color-painting-skin: #E2B68E;
+
+  /* 3. Acentos */
+  --color-gold-frame: #B59352;
+
+  /* UI Colors */
+  --color-text-light: #f0f0f0;
+  --color-text-dark: #222;
+  --color-overlay-bg: rgba(14, 47, 68, 0.9);
+  /* Based on wall shadow */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-wall-shadow);
+  color: var(--color-text-light);
+  overflow: hidden;
+  /* Prevent body scroll, we handle it inside components */
+  width: 100vw;
+  height: 100vh;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Scene View */
+.scene-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.nav-arrow {
+  position: absolute;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  /* Background #06131B with transparency (approx 0.7) */
+  background: rgba(6, 19, 27, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background 0.2s;
+  z-index: 10;
+  border: 2px solid var(--color-gold-frame);
+}
+
+.nav-arrow:hover {
+  transform: scale(1.1);
+  background: rgba(6, 19, 27, 0.9);
+}
+
+.nav-arrow svg {
+  width: 30px;
+  height: 30px;
+  /* Color requested: #0E2F44 */
+  fill: #0E2F44;
+  /* Keep the icon color or change to white if background is dark? User didn't ask to change icon color, but contrast might be low. */
+  /* Actually, #0E2F44 is dark blue. Background #06131B is also dark. 
+     Contrast will be very low. 
+     However, user specifically asked for background #06131B.
+     I should probably keep the icon fill as is unless it's invisible.
+     The previous fill was #0E2F44. 
+     Let's stick to user request. If they want to change icon color later, they will ask.
+     But wait, previously I added a white drop shadow to the SVG. That should help.
+  */
+  fill: #0E2F44;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+  /* White glow for visibility */
+}
+
+/* Index View Specifics */
+.index-nav-container {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* Spread arrows apart */
+  align-items: center;
+  z-index: 20;
+  padding: 0 5%;
+  /* Margen relativamente amplio */
+  pointer-events: none;
+  /* Let clicks pass through container */
+}
+
+.nav-slot {
+  width: 100px;
+  /* Fixed width to ensure center is centered */
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+  /* Re-enable clicks on slots */
+}
+
+.nav-arrow-index {
+  cursor: pointer;
+  transition: transform 0.2s;
+  /* Background #06131B with transparency */
+  background: rgba(6, 19, 27, 0.7);
+  border-radius: 50%;
+  border: none;
+  width: auto;
+  height: auto;
+  padding: 15px;
+  /* Add padding for the circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-arrow-index:hover {
+  transform: scale(1.1);
+  background: rgba(6, 19, 27, 0.9);
+}
+
+.nav-arrow-img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Logos - Now inside Bootstrap Navbar */
+.logo-munal {
+  height: 50px;
+  /* Reduced height */
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.logo-munal:hover {
+  transform: scale(1.05);
+}
+
+.logo-exhibition {
+  height: 60px;
+  /* Reduced height */
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.logo-exhibition:hover {
+  transform: scale(1.05);
+}
+
+
+
+.arrow-up {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow-up:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.arrow-down {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.arrow-down:hover {
+  transform: translateX(-50%) rotate(180deg) scale(1.1);
+}
+
+.arrow-left {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.arrow-left:hover {
+  transform: translateY(-50%) rotate(-90deg) scale(1.1);
+}
+
+.arrow-right {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.arrow-right:hover {
+  transform: translateY(-50%) rotate(90deg) scale(1.1);
+}
+
+/* Painting Hotspots */
+.painting-hotspot {
+  position: absolute;
+  border: 2px dashed var(--color-gold-frame);
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.painting-hotspot:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Detail Overlay */
+.detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-overlay-bg);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.detail-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.detail-content {
+  width: 90%;
+  max-width: 800px;
+  height: 80%;
+  background: var(--color-wall-light);
+  border: 4px solid var(--color-gold-frame);
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.detail-title {
+  font-size: 2.5rem;
+  color: var(--color-painting-yellow);
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  /* Suggest adding a serif font */
+}
+
+.detail-info {
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+/* Orientation Warning */
+#orientation-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-wall-shadow);
+  z-index: 9999;
+  display: none;
+  /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.warning-content {
+  color: var(--color-text-light);
+}
+
+.rotate-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: rotate 2s infinite linear;
+  color: var(--color-gold-frame);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Portrait Media Query */
+@media (orientation: portrait) and (max-width: 768px) {
+  #orientation-warning {
+    display: flex !important;
+  }
+
+  #tour-container,
+  .navbar,
+  .logo-container,
+  .index-nav-container,
+  .nav-arrow {
+    display: none !important;
+  }
+}
