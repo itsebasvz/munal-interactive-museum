@@ -6,7 +6,7 @@ export class SceneView {
     createSceneElement(nodeData) {
         const container = document.createElement('div');
         container.className = 'scene-container';
-        container.style.backgroundImage = `url(${nodeData.image})`;
+        // Background image is now set conditionally at the end or inside the wrapper
 
         // Navigation Arrows
         if (nodeData.arrows) {
@@ -80,6 +80,10 @@ export class SceneView {
 
                     arrowEl.appendChild(img);
 
+                    if (arrow.rotation) {
+                        arrowEl.style.transform = `rotate(${arrow.rotation}deg)`;
+                    }
+
                     arrowEl.addEventListener('click', (e) => {
                         e.stopPropagation();
                         this.tour.navigate(arrow);
@@ -112,6 +116,90 @@ export class SceneView {
 
                 container.appendChild(hotspot);
             });
+        }
+
+        if (nodeData.infoSection) {
+            // Create a scrollable wrapper
+            const scrollWrapper = document.createElement('div');
+            scrollWrapper.className = 'scroll-wrapper';
+
+            // 1. The Scene Background (First "Page")
+            const sceneBackground = document.createElement('div');
+            sceneBackground.className = 'scene-background';
+            sceneBackground.style.backgroundImage = `url(${nodeData.image})`;
+
+            // Move arrows/hotspots into sceneBackground instead of container
+            // We need to re-parent the children we just added to container
+            while (container.firstChild) {
+                sceneBackground.appendChild(container.firstChild);
+            }
+
+            // Add scroll hint arrow
+            const scrollHint = document.createElement('div');
+            scrollHint.className = 'scroll-hint';
+            scrollHint.innerHTML = '<span>↓</span>';
+            sceneBackground.appendChild(scrollHint);
+
+            scrollWrapper.appendChild(sceneBackground);
+
+            // 2. The Info Section (Second "Page")
+            const infoContainer = document.createElement('div');
+            infoContainer.className = 'info-section container-fluid';
+            infoContainer.innerHTML = `
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6 info-content animate-on-scroll">
+                        <h2 class="info-title mb-4 animate-on-scroll">${nodeData.infoSection.title}</h2>
+                        <div class="info-meta mb-4 animate-on-scroll">
+                            <p><strong>Artista:</strong> ${nodeData.infoSection.artist}</p>
+                            <p><strong>Año:</strong> ${nodeData.infoSection.year}</p>
+                            <p><strong>Técnica:</strong> ${nodeData.infoSection.technique}</p>
+                            <p><strong>Ubicación:</strong> ${nodeData.infoSection.location}</p>
+                        </div>
+                        <div class="info-description animate-on-scroll">
+                            ${nodeData.infoSection.description}
+                        </div>
+                    </div>
+                </div>
+            `;
+            scrollWrapper.appendChild(infoContainer);
+
+            container.appendChild(scrollWrapper);
+            container.classList.add('has-scroll');
+
+            // --- Parallax & Animation Logic ---
+
+            // Parallax Effect
+            scrollWrapper.addEventListener('scroll', () => {
+                const scrollTop = scrollWrapper.scrollTop;
+                // Move background at half speed
+                sceneBackground.style.transform = `translateY(${scrollTop * 0.5}px)`;
+                // Optional: Fade out scroll hint
+                scrollHint.style.opacity = Math.max(0, 1 - scrollTop / 300);
+            });
+
+            // Intersection Observer for Fade-in Animations
+            const observerOptions = {
+                root: scrollWrapper,
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Animate only once
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements after they are added to DOM
+            // We need a slight delay or just observe the children of the newly created element
+            // Since we haven't returned container yet, we can observe the elements we just created.
+            const animatedElements = infoContainer.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+
+        } else {
+            container.style.backgroundImage = `url(${nodeData.image})`;
         }
 
         return container;

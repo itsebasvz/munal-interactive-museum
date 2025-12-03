@@ -8,7 +8,7 @@ export const museumData = {
         arrows: [
           { direction: 'left', targetRoom: 'salaB', targetNode: 'index', icon: '/assets/icons/arrow-narrow-left.svg' },
           { direction: 'up', target: 'centro', icon: '/assets/icons/arrow-narrow-up.svg' },
-          { direction: 'right', targetRoom: 'salaC', targetNode: 'index', icon: '/assets/icons/arrow-narrow-right.svg' }
+          { direction: 'right', targetRoom: 'salaC', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-right.svg' }
         ]
       },
       centro: {
@@ -17,7 +17,7 @@ export const museumData = {
         arrows: [
           { direction: 'down', target: 'index', icon: '/assets/icons/arrow-narrow-down.svg' },
           { direction: 'left', targetRoom: 'salaB', targetNode: 'index', icon: '/assets/icons/arrow-narrow-left.svg' },
-          { direction: 'right', targetRoom: 'salaC', targetNode: 'index', icon: '/assets/icons/arrow-narrow-right.svg' }
+          { direction: 'right', targetRoom: 'salaC', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-right.svg' }
         ],
         paintings: [
           {
@@ -68,7 +68,24 @@ export const museumData = {
         arrows: [
           { direction: 'left', target: 'index', icon: '/assets/icons/arrow-narrow-left.svg' }
         ],
-        paintings: []
+        paintings: [],
+        infoSection: {
+          title: 'Retrato del poeta Jorge Cuesta (1949)',
+          artist: 'Carlos Orozco Romero',
+          year: '1949',
+          technique: 'Óleo sobre tela',
+          location: 'Museo Nacional de Arte (MUNAL), México',
+          description: `
+            <p><strong>¿Quién fue Carlos Orozco Romero? (1896–1984)</strong></p>
+            <ul>
+              <li>Pintor jalisciense, uno de los más importantes artistas modernos de México.</li>
+              <li>No perteneció al muralismo: su obra es más íntima, simbólica y psicológica.</li>
+              <li>Fue parte de la Escuela Moderna Mexicana, junto con Julio Castellanos, Abraham Ángel y Carlos Mérida.</li>
+              <li>Le interesaban los retratos sobrios, con pocas distracciones, donde la expresión interna del sujeto era lo esencial.</li>
+            </ul>
+            <p>Su estilo era muy distinto al de Rivera, Orozco o Siqueiros: Orozco Romero prefería composiciones simples, fondos planos, y retratos que parecieran “pensar”.</p>
+          `
+        }
       },
       centro_izquierda: {
         id: 'centro_izquierda',
@@ -77,7 +94,20 @@ export const museumData = {
           { direction: 'right', target: 'centro', icon: '/assets/icons/arrow-narrow-right.svg' },
           { direction: 'left', target: 'izquierda', icon: '/assets/icons/arrow-narrow-left.svg' } // Logic check: from center-left, left goes to left wall?
         ],
-        paintings: []
+        paintings: [],
+        infoSection: {
+          title: 'Retrato de Salvador Novo (popularmente conocido como “El taxi”)',
+          artist: 'Abraham Ángel Card Valdes',
+          year: '1922',
+          technique: 'Óleo sobre cartón',
+          location: 'Museo Nacional de Arte (MUNAL), Ciudad de México',
+          description: `
+            <p>El Retrato de Salvador Novo es una de las obras más icónicas del joven pintor mexicano Abraham Ángel (1905–1924). Salvador Novo, quien aparece en la pintura, fue uno de los escritores y cronistas más importantes de la literatura mexicana del siglo XX, miembro del grupo literario de “Los Contemporáneos”.</p>
+            <p>La obra muestra a Novo sentado dentro de un taxi, representado con una postura elegante y una mirada directa, casi desafiante. Esta composición refleja tanto la personalidad sofisticada de Novo como el ambiente urbano y moderno que comenzaba a dominar la Ciudad de México en los años 20. El taxi —un símbolo claro de modernidad— ayuda a ubicar la obra dentro del contexto cultural del México posrevolucionario, donde lo cosmopolita comenzaba a mezclarse con las tradiciones locales.</p>
+            <p>Abraham Ángel destacó por retratar a personajes de su círculo intelectual con una sensibilidad única. Aunque murió muy joven, dejó una obra breve pero intensa, en la que capturó la identidad urbana moderna de México. En El taxi, su estilo muestra colores planos, líneas definidas y un sentido íntimo del retrato, revelando tanto la presencia física del modelo como una dimensión psicológica.</p>
+            <p>Este retrato es también un documento histórico: Novo tenía apenas alrededor de 18 años cuando posó para Ángel, y la pintura refleja el espíritu juvenil, intelectual y vanguardista que caracterizó a la generación de artistas y escritores de la época.</p>
+          `
+        }
       },
       // Note: 'centro-derecha.jpg' exists in assets, let's add it
       centro_derecha: {
@@ -87,7 +117,20 @@ export const museumData = {
           { direction: 'left', target: 'centro', icon: '/assets/icons/arrow-narrow-left.svg' },
           { direction: 'right', target: 'derecha', icon: '/assets/icons/arrow-narrow-right.svg' }
         ],
-        paintings: []
+        paintings: [],
+        infoSection: {
+          title: 'Retrato de Esperanza Crespo (también conocido como Retrato de Cristina Crespo)',
+          artist: 'Abraham Ángel Card Valdés',
+          year: 'c. 1924',
+          technique: 'Óleo sobre cartón',
+          location: 'Museo Nacional de Arte (MUNAL), México',
+          description: `
+            <p>Abraham Ángel fue un joven pintor mexicano nacido en 1905 y fallecido en 1924, a los 19 años. A pesar de su corta vida, se considera una de las figuras más prometedoras del arte moderno en México. Su estilo era muy distinto al muralismo dominante: se enfocaba en retratos íntimos, emocionales y con gran sensibilidad psicológica. Su obra completa incluye menos de 30 pinturas, lo que la hace especialmente valiosa.</p>
+            <p>La mujer retratada, Esperanza Crespo (en algunos catálogos: Cristina Crespo), era hermana del crítico de arte Jorge Juan Crespo de la Serna. En este retrato, Abraham Ángel muestra a una mujer moderna para los años 20: segura, de mirada directa, con un peinado y vestimenta contemporáneos. Representa el surgimiento de una nueva identidad femenina en México.</p>
+            <p>El fondo de la pintura combina un paisaje típico mexicano con elementos de modernidad, como construcciones o estructuras urbanas. Esta mezcla simboliza la transición que vivía México entre tradición y modernidad durante la década de 1920. La obra no solo retrata a una persona, sino también un momento histórico: el nacimiento de una mujer independiente en un país en transformación.</p>
+            <p>Este cuadro es uno de los más conocidos de Abraham Ángel porque muestra su estilo puro: sensibilidad, introspección y una mezcla entre inocencia y modernidad. Además, es una de las últimas obras que realizó antes de su muerte, lo que le da un valor histórico y emocional adicional.</p>
+          `
+        }
       }
     }
   },
@@ -104,14 +147,59 @@ export const museumData = {
     }
   },
   salaC: {
-    startNode: 'index',
+    startNode: 'overview',
     nodes: {
-      index: {
-        id: 'index',
+      overview: {
+        id: 'overview',
         image: '/assets/imgs/salaC/planocentralC.jpg',
         arrows: [
-          { direction: 'left', targetRoom: 'salaA', targetNode: 'index', icon: '/assets/icons/arrow-narrow-left.svg' }
+          { direction: 'down', targetRoom: 'salaA', targetNode: 'index', icon: '/assets/icons/arrow-narrow-down.svg' },
+          { direction: 'left', target: 'centro', icon: '/assets/icons/arrow-narrow-up.svg' },
+          { direction: 'right', target: 'derecha', icon: '/assets/icons/arrow-narrow-up.svg' }
         ]
+      },
+      centro: {
+        id: 'centro',
+        image: '/assets/imgs/salaC1/centro.jpg',
+        arrows: [
+          { direction: 'down', target: 'overview', icon: '/assets/icons/arrow-narrow-down.svg' }
+        ],
+        paintings: []
+      },
+      derecha: {
+        id: 'derecha',
+        image: '/assets/imgs/salaC/planoderecha.jpg',
+        arrows: [
+          { direction: 'left', target: 'overview', icon: '/assets/icons/arrow-narrow-left.svg' }
+        ],
+        paintings: [
+          {
+            id: 'cuadro_izq',
+            x: 25, y: 50, w: 15, h: 25,
+            targetNode: 'derecha_cuadro_izq'
+          },
+          {
+            id: 'cuadro_der',
+            x: 75, y: 50, w: 15, h: 25,
+            targetNode: 'derecha_cuadro_der'
+          }
+        ]
+      },
+      derecha_cuadro_izq: {
+        id: 'derecha_cuadro_izq',
+        image: '/assets/imgs/salaC/izquierda.jpg',
+        arrows: [
+          { direction: 'down', target: 'derecha', icon: '/assets/icons/arrow-narrow-down.svg' }
+        ],
+        paintings: []
+      },
+      derecha_cuadro_der: {
+        id: 'derecha_cuadro_der',
+        image: '/assets/imgs/salaC/derecha.jpg',
+        arrows: [
+          { direction: 'down', target: 'derecha', icon: '/assets/icons/arrow-narrow-down.svg' }
+        ],
+        paintings: []
       }
     }
   }

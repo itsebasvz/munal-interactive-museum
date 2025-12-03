@@ -56,6 +56,23 @@ export class VirtualTour {
 
         const sceneElement = this.sceneView.createSceneElement(nodeData);
         this.container.appendChild(sceneElement);
+
+        this.updateNavbar();
+    }
+
+    updateNavbar() {
+        const navbar = document.getElementById('main-navbar');
+        if (!navbar) return;
+
+        const transparentNodes = ['derecha', 'izquierda', 'centro_derecha', 'centro_izquierda'];
+
+        if (transparentNodes.includes(this.currentNodeId)) {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.boxShadow = 'none';
+        } else {
+            navbar.style.backgroundColor = '#06131B';
+            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        }
     }
 
     openDetail(paintingId) {
