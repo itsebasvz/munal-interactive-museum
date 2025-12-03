@@ -230,6 +230,8 @@ body {
   /* border: 1px solid rgba(255, 215, 0, 0.4); Optional border */
 }
 
+
+
 /* Detail Overlay */
 .detail-overlay {
   position: fixed;
@@ -497,6 +499,7 @@ body {
 .info-description.animate-on-scroll {
   transition-delay: 0.5s;
 }
+
 /* Navbar Styles */
 .navbar-nav .nav-link {
   color: var(--color-text-light) !important;
@@ -530,4 +533,35 @@ body {
 
 .custom-input::placeholder {
   color: rgba(240, 240, 240, 0.5);
+}
+
+/* Fullscreen Icon */
+.icon-fullscreen {
+  width: 24px;
+  height: 24px;
+  /* Use filter to make it white/gold or keep original if suitable */
+  /* Assuming original is black/dark, invert for dark navbar */
+  /* Removed filter: invert(1); as per user request to keep original SVG color */
+  transition: transform 0.2s ease;
+}
+
+#btn-fullscreen:hover .icon-fullscreen {
+  transform: scale(1.1);
+}
+
+/* Mobile Navbar Toggler Positioning */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1050;
+  }
+
+  /* Adjust right logo container to avoid overlap */
+  .navbar .d-flex.ms-auto,
+  .navbar .d-flex:last-child {
+    margin-right: 60px;
+    /* Space for the toggler */
+  }
 }

@@ -56,6 +56,7 @@ export class VirtualTour {
 
         const sceneElement = this.sceneView.createSceneElement(nodeData);
         this.container.appendChild(sceneElement);
+        this.container.dataset.room = this.currentRoom;
 
         this.updateNavbar();
     }
@@ -64,12 +65,21 @@ export class VirtualTour {
         const navbar = document.getElementById('main-navbar');
         if (!navbar) return;
 
-        const transparentNodes = ['derecha', 'izquierda', 'centro_derecha', 'centro_izquierda'];
+        // Define transparent nodes per room
+        const transparentRules = {
+            salaA: ['derecha', 'izquierda', 'centro_derecha', 'centro_izquierda'],
+            salaC: ['derecha_cuadro_izq', 'derecha_cuadro_der', 'centro'] // Added centro (salaC1) if needed, otherwise just the closeups
+        };
 
-        if (transparentNodes.includes(this.currentNodeId)) {
+        // Check if current node is in the transparent list for the current room
+        const isTransparent = transparentRules[this.currentRoom] &&
+            transparentRules[this.currentRoom].includes(this.currentNodeId);
+
+        if (isTransparent) {
             navbar.style.backgroundColor = 'transparent';
             navbar.style.boxShadow = 'none';
         } else {
+            // Default dark
             navbar.style.backgroundColor = '#06131B';
             navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
         }

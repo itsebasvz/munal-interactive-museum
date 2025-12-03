@@ -6,7 +6,7 @@ export const museumData = {
         id: 'index',
         image: '/assets/imgs/salaA/index.jpg',
         arrows: [
-          { direction: 'left', targetRoom: 'salaB', targetNode: 'index', icon: '/assets/icons/arrow-narrow-left.svg' },
+          { direction: 'left', targetRoom: 'salaB', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-left.svg' },
           { direction: 'up', target: 'centro', icon: '/assets/icons/arrow-narrow-up.svg' },
           { direction: 'right', targetRoom: 'salaC', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-right.svg' }
         ]
@@ -16,7 +16,7 @@ export const museumData = {
         image: '/assets/imgs/salaA/centro.jpg',
         arrows: [
           { direction: 'down', target: 'index', icon: '/assets/icons/arrow-narrow-down.svg' },
-          { direction: 'left', targetRoom: 'salaB', targetNode: 'index', icon: '/assets/icons/arrow-narrow-left.svg' },
+          { direction: 'left', targetRoom: 'salaB', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-left.svg' },
           { direction: 'right', targetRoom: 'salaC', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-right.svg' }
         ],
         paintings: [
@@ -135,14 +135,23 @@ export const museumData = {
     }
   },
   salaB: {
-    startNode: 'index',
+    startNode: 'overview',
     nodes: {
-      index: {
-        id: 'index',
+      overview: {
+        id: 'overview',
         image: '/assets/imgs/salaB/planocentralB.jpg',
         arrows: [
-          { direction: 'right', targetRoom: 'salaA', targetNode: 'index', icon: '/assets/icons/arrow-narrow-right.svg' }
+          { direction: 'left', target: 'izquierda', icon: '/assets/icons/arrow-narrow-up.svg' },
+          { direction: 'down', targetRoom: 'salaA', targetNode: 'index', icon: '/assets/icons/arrow-narrow-down.svg' }
         ]
+      },
+      izquierda: {
+        id: 'izquierda',
+        image: '/assets/imgs/salaB/plano_izquierda.jpg',
+        arrows: [
+          { direction: 'right', target: 'overview', icon: '/assets/icons/arrow-narrow-right.svg' }
+        ],
+        paintings: []
       }
     }
   },
@@ -175,12 +184,12 @@ export const museumData = {
         paintings: [
           {
             id: 'cuadro_izq',
-            x: 25, y: 50, w: 15, h: 25,
+            x: 14, y: 50, w: 15, h: 33,
             targetNode: 'derecha_cuadro_izq'
           },
           {
             id: 'cuadro_der',
-            x: 75, y: 50, w: 15, h: 25,
+            x: 84, y: 50, w: 25, h: 55,
             targetNode: 'derecha_cuadro_der'
           }
         ]
@@ -191,7 +200,24 @@ export const museumData = {
         arrows: [
           { direction: 'down', target: 'derecha', icon: '/assets/icons/arrow-narrow-down.svg' }
         ],
-        paintings: []
+        paintings: [],
+        infoSection: {
+          title: 'Vendedora de pinole',
+          artist: 'Diego Rivera',
+          year: '1936',
+          technique: 'Óleo sobre tela',
+          location: 'Museo Nacional de Arte (MUNAL), Ciudad de México',
+          description: `
+            <p><em>Vendedora de pinole</em> es una pintura de caballete realizada por Diego Rivera en 1936. La obra muestra a una mujer sentada junto a un recipiente que contiene pinole, un alimento tradicional elaborado con maíz molido. A través de esta escena sencilla, Rivera exalta la vida cotidiana, el trabajo humilde y las tradiciones mexicanas.</p>
+            <p>La composición utiliza colores terrosos y una iluminación suave que resaltan la serenidad y dignidad de la figura representada. Aunque Rivera es más conocido por sus murales, esta pintura demuestra su sensibilidad para retratar a las clases trabajadoras con profundo respeto y humanidad.</p>
+            <p><strong>Datos principales:</strong></p>
+            <ul>
+              <li><strong>Dimensiones:</strong> 81.4 × 60.7 cm</li>
+              <li><strong>Tema:</strong> Vida cotidiana, tradición, trabajo popular</li>
+            </ul>
+            <p>La obra forma parte del enfoque realista y social que caracteriza gran parte del trabajo de Rivera, mostrando la identidad y cultura mexicana a través de personajes comunes y escenas tradicionales.</p>
+          `
+        }
       },
       derecha_cuadro_der: {
         id: 'derecha_cuadro_der',
@@ -199,7 +225,23 @@ export const museumData = {
         arrows: [
           { direction: 'down', target: 'derecha', icon: '/assets/icons/arrow-narrow-down.svg' }
         ],
-        paintings: []
+        paintings: [],
+        infoSection: {
+          title: 'Retrato de Ana María Güido Corral',
+          artist: 'Diego Rivera',
+          year: 'No especificado públicamente',
+          technique: 'Óleo sobre tela',
+          location: 'Museo Nacional de Arte (MUNAL), Ciudad de México',
+          description: `
+            <p>El <em>Retrato de Ana María Güido Corral</em> es una obra realizada por Diego Rivera, recientemente incorporada al acervo del Museo Nacional de Arte (MUNAL) en 2023. Este retrato forma parte de una colección familiar que perteneció a la pintora Ana María Icaza de Xirau y a su esposo, el filósofo Ramón Xirau. La donación incluyó diversos retratos de los antepasados de la familia, entre ellos el de Ana María Güido Corral, madre de la pintora.</p>
+            <p>La obra destaca dentro del conjunto por su valor histórico y por ser un ejemplo del trabajo de Rivera en retratos íntimos y familiares, menos conocidos que sus murales pero igualmente significativos. Su incorporación al MUNAL contribuye a preservar la memoria visual de una familia ligada a la vida cultural e intelectual de México.</p>
+            <p><strong>Datos adicionales:</strong></p>
+            <ul>
+              <li><strong>Colección:</strong> Donación de la familia Xirau–Icaza (2023)</li>
+              <li><strong>Importancia:</strong> Obra íntima dentro de la tradición de retratos familiares; enriquecimiento del patrimonio artístico mexicano.</li>
+            </ul>
+          `
+        }
       }
     }
   }

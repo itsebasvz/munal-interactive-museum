@@ -35,7 +35,10 @@ document.querySelector('#app').innerHTML = `
       </div>
 
       <!-- Right Logo: Munal Logo -> Modal Trigger -->
-      <div class="d-flex">
+      <div class="d-flex align-items-center">
+        <button id="btn-fullscreen" class="btn btn-link p-0 me-3" aria-label="Toggle Fullscreen">
+            <img src="/assets/icons/arrows-maximize.svg" alt="Fullscreen" class="icon-fullscreen">
+        </button>
         <a href="#" data-bs-toggle="modal" data-bs-target="#munalInfoModal">
             <img src="/assets/icons/Munal-Logo-Vector.svg-.png" alt="Munal Logo" class="logo-munal">
         </a>
@@ -163,3 +166,19 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   contactModal.hide();
   e.target.reset();
 });
+
+// Handle Fullscreen Toggle
+const btnFullscreen = document.getElementById('btn-fullscreen');
+if (btnFullscreen) {
+  btnFullscreen.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable fullscreen: ${err.message}`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  });
+}
