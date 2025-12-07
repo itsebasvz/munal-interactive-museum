@@ -33,6 +33,9 @@ document.querySelector('#app').innerHTML = `
           <li class="nav-item mx-3">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">CONTACTO</a>
           </li>
+          <li class="nav-item mx-3">
+             <a class="nav-link" href="about.html">SOBRE NOSOTROS</a>
+          </li>
         </ul>
       </div>
 
