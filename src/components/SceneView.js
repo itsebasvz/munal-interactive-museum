@@ -99,6 +99,9 @@ export class SceneView {
             nodeData.paintings.forEach(painting => {
                 const hotspot = document.createElement('div');
                 hotspot.className = 'painting-hotspot';
+                if (painting.className) {
+                    hotspot.classList.add(painting.className);
+                }
                 hotspot.style.left = `${painting.x}%`;
                 hotspot.style.top = `${painting.y}%`;
                 hotspot.style.width = `${painting.w || 10}%`;
@@ -147,7 +150,7 @@ export class SceneView {
             infoContainer.className = 'info-section container-fluid';
             infoContainer.innerHTML = `
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-8 col-lg-6 info-content animate-on-scroll">
+                    <div class="col-12 col-md-8 ${nodeData.infoSection.colClass || 'col-lg-6'} info-content animate-on-scroll">
                         <h2 class="info-title mb-4 animate-on-scroll">${nodeData.infoSection.title}</h2>
                         <div class="info-meta mb-4 animate-on-scroll">
                             <p><strong>Artista:</strong> ${nodeData.infoSection.artist}</p>

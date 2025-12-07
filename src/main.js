@@ -23,10 +23,10 @@ document.querySelector('#app').innerHTML = `
             <a class="nav-link active" aria-current="page" href="#" id="nav-sala-a">SALA A</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">SALA B</a>
+            <a class="nav-link" href="#" id="nav-sala-b">SALA B</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">SALA C</a>
+            <a class="nav-link" href="#" id="nav-sala-c">SALA C</a>
           </li>
           <li class="nav-item mx-3">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">CONTACTO</a>
@@ -148,6 +148,28 @@ const tour = new VirtualTour('tour-container');
 document.getElementById('nav-sala-a').addEventListener('click', (e) => {
   e.preventDefault();
   tour.navigate({ targetRoom: 'salaA', targetNode: 'index' });
+  // Close mobile menu if open
+  const navbarCollapse = document.getElementById('navbarNav');
+  if (navbarCollapse.classList.contains('show')) {
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
+    bsCollapse.hide();
+  }
+});
+
+document.getElementById('nav-sala-c').addEventListener('click', (e) => {
+  e.preventDefault();
+  tour.navigate({ targetRoom: 'salaC', targetNode: 'centro' });
+  // Close mobile menu if open
+  const navbarCollapse = document.getElementById('navbarNav');
+  if (navbarCollapse.classList.contains('show')) {
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
+    bsCollapse.hide();
+  }
+});
+
+document.getElementById('nav-sala-b').addEventListener('click', (e) => {
+  e.preventDefault();
+  tour.navigate({ targetRoom: 'salaB', targetNode: 'centro' });
   // Close mobile menu if open
   const navbarCollapse = document.getElementById('navbarNav');
   if (navbarCollapse.classList.contains('show')) {

@@ -177,7 +177,7 @@ body {
 
 
 .arrow-up {
-  top: 20px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -228,6 +228,12 @@ body {
 .painting-hotspot:hover {
   /* box-shadow removed as per user request */
   /* border: 1px solid rgba(255, 215, 0, 0.4); Optional border */
+}
+
+.hotspot-glow {
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  border: 1px solid rgba(255, 215, 0, 0.8);
+  background: rgba(255, 215, 0, 0.1);
 }
 
 
@@ -363,14 +369,14 @@ body {
 
 .scroll-hint {
   position: absolute;
-  bottom: 20px;
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
   color: var(--color-text-light);
   font-size: 2rem;
   animation: bounce 2s infinite;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
+  pointer-events: none;
   z-index: 20;
 }
 
@@ -434,6 +440,14 @@ body {
   line-height: 1.8;
   font-size: 1.1rem;
   text-align: justify;
+}
+
+.info-description h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--color-painting-yellow);
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Hide scrollbar for cleaner look */
@@ -563,5 +577,34 @@ body {
   .navbar .d-flex:last-child {
     margin-right: 60px;
     /* Space for the toggler */
+  }
+}
+
+/* Dark Navbar Text for Light Backgrounds */
+.navbar-text-dark .nav-link {
+  color: #222 !important;
+}
+
+.navbar-text-dark .navbar-brand {
+  color: #222 !important;
+}
+
+.navbar-text-dark .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.navbar-text-dark .nav-link.active {
+  color: #965F2B !important;
+}
+
+/* Mobile Navigation Arrows */
+@media (max-width: 768px) {
+  .nav-arrow-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .nav-arrow-index {
+    padding: 10px;
   }
 }
