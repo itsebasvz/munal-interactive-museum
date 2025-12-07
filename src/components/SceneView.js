@@ -66,7 +66,8 @@ export class SceneView {
                             'left': 'arrow-narrow-left.svg',
                             'right': 'arrow-narrow-right.svg'
                         };
-                        iconSrc = `/assets/icons/${directionMap[arrow.direction] || 'arrow-narrow-up.svg'}`;
+                        const BASE = import.meta.env.BASE_URL;
+                        iconSrc = `${BASE}assets/icons/${directionMap[arrow.direction] || 'arrow-narrow-up.svg'}`;
                     }
 
                     const img = document.createElement('img');

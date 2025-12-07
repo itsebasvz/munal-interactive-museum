@@ -127,7 +127,7 @@ export const museumData = {
                 <p>Fue director del Museo de Arte Moderno de México entre 1962 y 1964. Sus obras se expusieron tanto en México como en el extranjero: en concreto, participó en las bienales XXIX de Venecia en 1958 y XV de la Acuarela Internacional de Pittsburg en 1968. Sus últimas exposiciones tuvieron lugar en el Museo de Arte Contemporáneo de Monterrey, en 1978 y 1980, año en el que fue premiado con Premio Nacional de Ciencias y Artes en el área de Bellas Artes. Murió en 1984, en la Ciudad de México.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/CarlosOrozco.png" class="img-fluid rounded shadow-lg w-100" alt="Carlos Orozco Romero">
+                <img src='" + BASE + "assets/imgs/salaA/CarlosOrozco.png" class="img-fluid rounded shadow-lg w-100" alt="Carlos Orozco Romero">
               </div>
             </div>
           `
@@ -157,7 +157,7 @@ export const museumData = {
                 <p>Este retrato es también un documento histórico: Novo tenía apenas alrededor de 18 años cuando posó para Ángel, y la pintura refleja el espíritu juvenil, intelectual y vanguardista que caracterizó a la generación de artistas y escritores de la época.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/AbrahamCard.png" class="img-fluid rounded shadow-lg w-100" alt="Abraham Ángel Card Valdés">
+                <img src='" + BASE + "assets/imgs/salaA/AbrahamCard.png" class="img-fluid rounded shadow-lg w-100" alt="Abraham Ángel Card Valdés">
               </div>
             </div>
           `
@@ -188,7 +188,7 @@ export const museumData = {
                 <p>Este cuadro es uno de los más conocidos de Abraham Ángel porque muestra su estilo puro: sensibilidad, introspección y una mezcla entre inocencia y modernidad. Además, es una de las últimas obras que realizó antes de su muerte, lo que le da un valor histórico y emocional adicional.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/AbrahamCard.png" class="img-fluid rounded shadow-lg w-100" alt="Abraham Ángel Card Valdés">
+                <img src='" + BASE + "assets/imgs/salaA/AbrahamCard.png" class="img-fluid rounded shadow-lg w-100" alt="Abraham Ángel Card Valdés">
               </div>
             </div>
           `
@@ -241,7 +241,7 @@ export const museumData = {
                 <p>Aunque Siqueiros es conocido principalmente por sus murales monumentales, esta obra demuestra su fuerza expresiva incluso en formatos más pequeños. El uso de piroxilina, un material industrial, muestra su interés en técnicas modernas y en experimentar más allá del óleo tradicional. La composición intensifica la sensación de dinamismo y carácter combativo del artista.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
+                <img src='" + BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
               </div>
             </div>
           `
@@ -271,7 +271,7 @@ export const museumData = {
                 <p>La obra representa tanto una relación personal —laboral y de confianza entre el artista y la galerista— como una manifestación de la modernidad urbana y un momento de transición en el arte mexicano, cuando se empezaban a incorporar influencias internacionales en el contexto posrevolucionario.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
+                <img src='" + BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
               </div>
             </div>
           `
@@ -313,7 +313,7 @@ export const museumData = {
                 <p>Hoy es considerada una pieza clave para entender el desarrollo del arte político en México, y una de las representaciones más potentes de la maternidad desde una perspectiva social y revolucionaria.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
+                <img src='" + BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
               </div>
             </div>
           `
@@ -341,7 +341,7 @@ export const museumData = {
                 <p>El uso de colores intensos, contrastes marcados y texturas dinámicas refleja el estilo expresivo y enérgico característico de Siqueiros. Aunque más conocido por sus murales, esta obra demuestra su habilidad en formatos de caballete sin perder la fuerza ideológica y emocional.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
+                <img src='" + BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
               </div>
             </div>
           `
@@ -383,7 +383,7 @@ export const museumData = {
                 <p>Esta obra es considerada un aporte significativo al acervo nacional por su calidad, su historia y el momento vital en que fue creada.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
+                <img src='" + BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
               </div>
             </div>
           `
@@ -414,7 +414,7 @@ export const museumData = {
                 <p>La Molendera es considerada una obra clave porque anticipa el estilo que Rivera consolidaría en sus murales: figuras monumentales, raíces indígenas, y una profunda valoración del pueblo mexicano como cimiento de la nueva identidad nacional.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
+                <img src='" + BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
               </div>
             </div>
           `
@@ -478,7 +478,7 @@ export const museumData = {
                 <p>La obra destaca por su fuerte carga emocional y por su representación dignificada del indígena, rompiendo con la visión heroica tradicional de la Conquista. Es considerada una de las primeras aproximaciones en la pintura mexicana a una visión más empática de la historia indígena. También demuestra el dominio académico de Félix Parra y su interés por temas históricos nacionales.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/FelixParra.png" class="img-fluid rounded shadow-lg w-100" alt="Félix Parra">
+                <img src='" + BASE + "assets/imgs/salaA/FelixParra.png" class="img-fluid rounded shadow-lg w-100" alt="Félix Parra">
               </div>
             </div>
           `
@@ -507,7 +507,7 @@ export const museumData = {
                 <p>Esta obra, junto con el resto de la serie, marca un cambio importante en la pintura mexicana del siglo XIX, al presentar una visión crítica y humanista de la historia. “El desmembrado (cadáver)” es relevante por su valentía temática, ya que rompe con la tendencia académica de glorificar la conquista y en su lugar revela sus aspectos más dolorosos. Félix Parra es considerado precursor del indigenismo pictórico que, décadas más tarde, retomarían artistas como Orozco o Rivera.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/FelixParra.png" class="img-fluid rounded shadow-lg w-100" alt="Félix Parra">
+                <img src='" + BASE + "assets/imgs/salaA/FelixParra.png" class="img-fluid rounded shadow-lg w-100" alt="Félix Parra">
               </div>
             </div>
           `
@@ -540,7 +540,7 @@ export const museumData = {
                 </ul>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/ArmandoJulio.png" class="img-fluid rounded shadow-lg w-100" alt="Armando Reverón">
+                <img src='" + BASE + "assets/imgs/salaA/ArmandoJulio.png" class="img-fluid rounded shadow-lg w-100" alt="Armando Reverón">
               </div>
             </div>
           `
@@ -592,7 +592,7 @@ export const museumData = {
                 <p>La obra forma parte del enfoque realista y social que caracteriza gran parte del trabajo de Rivera, mostrando la identidad y cultura mexicana a través de personajes comunes y escenas tradicionales.</p>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
+                <img src='" + BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
               </div>
             </div>
           `
@@ -624,7 +624,7 @@ export const museumData = {
                 </ul>
               </div>
               <div class="col-lg-3">
-                <img src=BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
+                <img src='" + BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
               </div>
             </div>
           `

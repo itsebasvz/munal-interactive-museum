@@ -3,12 +3,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './style.css';
 import { VirtualTour } from './components/VirtualTour.js';
 
+const BASE = import.meta.env.BASE_URL;
+
 document.querySelector('#app').innerHTML = `
   <nav id="main-navbar" class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #06131B; padding: 0.5rem 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
     <div class="container-fluid">
       <!-- Left Logo: Exhibition Logo -> Index -->
-      <a class="navbar-brand" href="/">
-        <img src="/assets/icons/logo.png" alt="Exhibition Logo" class="logo-exhibition">
+      <a class="navbar-brand" href=".">
+        <img src="${BASE}assets/icons/logo.png" alt="Exhibition Logo" class="logo-exhibition">
       </a>
 
       <!-- Toggler for mobile -->
@@ -37,10 +39,10 @@ document.querySelector('#app').innerHTML = `
       <!-- Right Logo: Munal Logo -> Modal Trigger -->
       <div class="d-flex align-items-center">
         <button id="btn-fullscreen" class="btn btn-link p-0 me-3" aria-label="Toggle Fullscreen">
-            <img src="/assets/icons/arrows-maximize.svg" alt="Fullscreen" class="icon-fullscreen">
+            <img src="${BASE}assets/icons/arrows-maximize.svg" alt="Fullscreen" class="icon-fullscreen">
         </button>
         <a href="#" data-bs-toggle="modal" data-bs-target="#munalInfoModal">
-            <img src="/assets/icons/Munal-Logo-Vector.svg-.png" alt="Munal Logo" class="logo-munal">
+            <img src="${BASE}assets/icons/Munal-Logo-Vector.svg-.png" alt="Munal Logo" class="logo-munal">
         </a>
       </div>
     </div>
