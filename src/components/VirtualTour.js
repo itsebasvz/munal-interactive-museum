@@ -68,8 +68,7 @@ export class VirtualTour {
         // Define transparent nodes per room
         const transparentRules = {
             salaA: ['derecha', 'izquierda', 'centro_derecha', 'centro_izquierda'],
-            salaB: ['izquierda_cuadro_izq', 'izquierda_cuadro_der', 'izquierda_centro', 'centro_wall', 'derecha_central_izq', 'derecha_central_der'],
-            salaC: ['derecha_cuadro_izq', 'derecha_cuadro_der', 'retratocentro', 'izquierda_central_izq', 'izquierda_central_der'] // Added centro (salaC1) if needed, otherwise just the closeups
+            salaC: ['derecha_cuadro_izq', 'derecha_cuadro_der', 'centro'] // Added centro (salaC1) if needed, otherwise just the closeups
         };
 
         // Check if current node is in the transparent list for the current room
@@ -80,58 +79,9 @@ export class VirtualTour {
             navbar.style.backgroundColor = 'transparent';
             navbar.style.boxShadow = 'none';
         } else {
+            // Default dark
             navbar.style.backgroundColor = '#06131B';
             navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-        }
-
-        // Define dark text nodes per room (for light backgrounds)
-        const darkTextRules = {
-            salaB: ['derecha_central_izq', 'derecha_central_der', 'izquierda_centro'],
-            salaC: ['izquierda_central_izq', 'izquierda_central_der', 'retratocentro']
-        };
-
-        const isDarkText = darkTextRules[this.currentRoom] &&
-            darkTextRules[this.currentRoom].includes(this.currentNodeId);
-
-        if (isDarkText) {
-            navbar.classList.add('navbar-text-dark');
-        } else {
-            navbar.classList.remove('navbar-text-dark');
-        }
-
-        // Update Active State
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => link.classList.remove('active'));
-
-        const activeLinkMap = {
-            salaA: 'nav-sala-a',
-            salaB: 'nav-sala-b',
-            salaC: 'nav-sala-c'
-        };
-
-        let activeLinkId = activeLinkMap[this.currentRoom];
-
-        // Special case: Some nodes in salaC should highlight SALA A
-        if (this.currentRoom === 'salaC') {
-            const salaANodesInSalaC = ['overview', 'derecha', 'derecha_cuadro_izq', 'derecha_cuadro_der'];
-            if (salaANodesInSalaC.includes(this.currentNodeId)) {
-                activeLinkId = 'nav-sala-a';
-            }
-        }
-
-        // Special case: Some nodes in salaB should highlight SALA A
-        if (this.currentRoom === 'salaB') {
-            const salaANodesInSalaB = ['overview', 'izquierda', 'izquierda_cuadro_izq', 'izquierda_cuadro_der'];
-            if (salaANodesInSalaB.includes(this.currentNodeId)) {
-                activeLinkId = 'nav-sala-a';
-            }
-        }
-
-        if (activeLinkId) {
-            const activeLink = document.getElementById(activeLinkId);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
         }
     }
 

@@ -177,7 +177,7 @@ body {
 
 
 .arrow-up {
-  top: 100px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -228,12 +228,6 @@ body {
 .painting-hotspot:hover {
   /* box-shadow removed as per user request */
   /* border: 1px solid rgba(255, 215, 0, 0.4); Optional border */
-}
-
-.hotspot-glow {
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-  border: 1px solid rgba(255, 215, 0, 0.8);
-  background: rgba(255, 215, 0, 0.1);
 }
 
 
@@ -369,14 +363,14 @@ body {
 
 .scroll-hint {
   position: absolute;
-  bottom: 90px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   color: var(--color-text-light);
   font-size: 2rem;
   animation: bounce 2s infinite;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  pointer-events: none;
+  cursor: pointer;
   z-index: 20;
 }
 
@@ -440,14 +434,6 @@ body {
   line-height: 1.8;
   font-size: 1.1rem;
   text-align: justify;
-}
-
-.info-description h3 {
-  font-family: 'Playfair Display', serif;
-  color: var(--color-painting-yellow);
-  font-size: 1.3rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
 }
 
 /* Hide scrollbar for cleaner look */
@@ -580,31 +566,248 @@ body {
   }
 }
 
-/* Dark Navbar Text for Light Backgrounds */
-.navbar-text-dark .nav-link {
-  color: #222 !important;
+/* =========================================
+   About Page Styles
+   ========================================= */
+
+.about-page {
+  overflow-y: auto;
 }
 
-.navbar-text-dark .navbar-brand {
-  color: #222 !important;
+.about-navbar {
+  background-color: #06131B;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-text-dark .navbar-toggler-icon {
-  filter: invert(1);
+.about-navbar .logo-exhibition {
+  height: 50px;
 }
 
-.navbar-text-dark .nav-link.active {
-  color: #965F2B !important;
+.about-navbar .logo-munal {
+  height: 40px;
 }
 
-/* Mobile Navigation Arrows */
+.about-hero {
+  background: linear-gradient(rgba(6, 19, 27, 0.8), rgba(6, 19, 27, 0.8)), url('/assets/imgs/about/munal exterior.jpg') center/cover no-repeat;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--color-painting-yellow);
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+}
+
+.section-dark {
+  background-color: var(--color-wall-shadow);
+}
+
+.about-carousel {
+  border: 2px solid var(--color-gold-frame);
+}
+
+.carousel-img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.section-title {
+  color: #e6dac0;
+  font-family: 'Playfair Display', serif;
+}
+
+.about-text {
+  line-height: 1.8;
+  color: #e6dac0;
+  text-align: justify;
+}
+
+.section-values {
+  background-color: #0c293c;
+}
+
+.value-icon-container {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-color: #e6dac0;
+}
+
+.icon-palette {
+  -webkit-mask: url(/assets/icons/palette.svg) no-repeat center / contain;
+  mask: url(/assets/icons/palette.svg) no-repeat center / contain;
+}
+
+.icon-school {
+  -webkit-mask: url(/assets/icons/school.svg) no-repeat center / contain;
+  mask: url(/assets/icons/school.svg) no-repeat center / contain;
+}
+
+.icon-world {
+  -webkit-mask: url(/assets/icons/world.svg) no-repeat center / contain;
+  mask: url(/assets/icons/world.svg) no-repeat center / contain;
+}
+
+.card-bordered-lr {
+  border-left: 1px solid var(--color-gold-frame) !important;
+  border-right: 1px solid var(--color-gold-frame) !important;
+}
+
+.about-accordion {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-color: var(--color-text-light);
+  --bs-accordion-border-color: var(--color-gold-frame);
+}
+
+.accordion-item-custom {
+  border: 1px solid var(--color-gold-frame);
+}
+
+.accordion-item-custom-top-0 {
+  border: 1px solid var(--color-gold-frame);
+  border-top: 0;
+}
+
+.accordion-button-custom {
+  background-color: var(--color-wall-light) !important;
+  color: var(--color-painting-yellow) !important;
+}
+
+.accordion-body-custom {
+  background-color: var(--color-wall-shadow);
+}
+
+.team-card {
+  border: 1px solid var(--color-gold-frame) !important;
+}
+
+.team-img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.team-name {
+  color: #e6dac0 !important;
+}
+
+.social-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon-container {
+  width: 16px;
+  height: 16px;
+  background-color: #e6dac0;
+}
+
+.icon-instagram {
+  -webkit-mask: url(/assets/icons/instagram.svg) no-repeat center / contain;
+  mask: url(/assets/icons/instagram.svg) no-repeat center / contain;
+}
+
+.icon-github {
+  -webkit-mask: url(/assets/icons/github.svg) no-repeat center / contain;
+  mask: url(/assets/icons/github.svg) no-repeat center / contain;
+}
+
+.icon-facebook {
+  -webkit-mask: url(/assets/icons/facebook.svg) no-repeat center / contain;
+  mask: url(/assets/icons/facebook.svg) no-repeat center / contain;
+}
+
+.icon-twitter {
+  -webkit-mask: url(/assets/icons/twitter.svg) no-repeat center / contain;
+  mask: url(/assets/icons/twitter.svg) no-repeat center / contain;
+}
+
+.about-footer {
+  background-color: #040e14;
+  border-top: 1px solid var(--color-wall-light);
+}
+
+.footer-copy {
+  color: var(--color-painting-yellow);
+}
+
+.footer-icon-container {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #e6dac0;
+}
+
+/* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
-  .nav-arrow-img {
-    width: 50px;
-    height: 50px;
+  .hero-title {
+    font-size: 2.5rem;
+    /* Smaller title on mobile */
   }
 
-  .nav-arrow-index {
-    padding: 10px;
+  .carousel-img {
+    height: 300px;
+    /* Reduced height for mobile */
+  }
+
+  .about-text {
+    text-align: justify;
+    /* Justify text for clean edges on mobile as requested */
+    font-size: 1rem;
+  }
+
+  .card-bordered-lr {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1px solid var(--color-gold-frame) !important;
+    border-bottom: 1px solid var(--color-gold-frame) !important;
+    margin: 1rem 0;
+    /* Add vertical spacing when stacked */
+  }
+
+  .value-icon-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .team-img {
+    height: 300px;
+    /* Slightly taller on mobile stack if needed, or keep 250 */
+  }
+
+  .about-hero {
+    min-height: 30vh;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Specific Overrides for About Page */
+  .about-page #orientation-warning {
+    display: none !important;
+  }
+
+  .about-page .navbar {
+    display: flex !important;
+  }
+
+  .about-accordion {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .accordion-body-custom {
+    text-align: justify;
   }
 }

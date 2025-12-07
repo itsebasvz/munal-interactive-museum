@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nosotros - MUNAL Interactive</title>
+</head>
+
+<body class="about-page">
+    <div id="app">
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar fixed-top navbar-expand-lg navbar-dark about-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/icons/logo.png" alt="Exhibition Logo" class="logo-exhibition">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="/">INICIO</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="/">SALA A</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">SALA B</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">SALA C</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="/">CONTACTO</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link active" aria-current="page" href="#">SOBRE NOSOTROS</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <a href="#">
+                        <img src="/assets/icons/Munal-Logo-Vector.svg-.png" alt="Munal Logo" class="logo-munal">
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="py-5 text-center mt-5 about-hero">
+            <div class="container">
+                <h1 class="display-3 fw-bold hero-title animate-on-scroll">Sobre Nosotros
+                </h1>
+                <p class="lead text-light hero-subtitle animate-on-scroll">Preservando el arte y la historia
+                    de México para el mundo.</p>
+            </div>
+        </header>
+
+        <!-- Quiénes Somos -->
+        <section class="py-5 section-dark">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <!-- Carousel -->
+                        <div id="aboutCarousel"
+                            class="carousel slide shadow-lg rounded about-carousel animate-on-scroll"
+                            data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner rounded">
+                                <div class="carousel-item active">
+                                    <img src="/assets/imgs/about/munal2.jpg" class="d-block w-100 carousel-img"
+                                        alt="Vista Central">
+
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/imgs/about/munal3.png" class="d-block w-100 carousel-img"
+                                        alt="Vista Izquierda">
+
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/assets/imgs/about/munal5.jpg" class="d-block w-100 carousel-img"
+                                        alt="Vista Derecha">
+
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-4 section-title animate-on-scroll">Quiénes
+                            Somos</h2>
+                        <p class="fs-5 about-text animate-on-scroll">
+                            El Museo Nacional de Arte (MUNAL) es una institución dedicada a la conservación, exhibición,
+                            estudio y difusión de las obras de arte mexicanas producidas entre la segunda mitad del
+                            siglo XVI y la primera mitad del siglo XX.
+                        </p>
+                        <p class="fs-5 about-text animate-on-scroll">
+                            El museo impulsa constantemente proyectos innovadores que integran tecnología, educación y
+                            participación social. A través de programas interactivos y actividades colaborativas,
+                            buscamos generar nuevas formas de acercarse al arte y fomentar el pensamiento creativo en
+                            personas de todas las edades.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valores -->
+        <section class="py-5 position-relative section-values">
+            <div class="container">
+                <h2 class="text-center mb-5 section-title animate-on-scroll">Nuestros
+                    Valores</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-transparent border-0 text-center p-4 animate-on-scroll">
+                            <div class="mb-3">
+                                <div class="value-icon-container icon-palette">
+                                </div>
+                            </div>
+                            <h3 class="h4 text-light mb-3">Preservación</h3>
+                            <p class="text-light opacity-75">Comprometidos con el cuidado y restauración de nuestro
+                                patrimonio artístico para futuras generaciones.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div
+                            class="card h-100 bg-transparent border-0 text-center p-4 card-bordered-lr animate-on-scroll">
+                            <div class="mb-3">
+                                <div class="value-icon-container icon-school">
+                                </div>
+                            </div>
+                            <h3 class="h4 text-light mb-3">Educación</h3>
+                            <p class="text-light opacity-75">Fomentamos el aprendizaje y la apreciación del arte a
+                                través de programas educativos inclusivos.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 bg-transparent border-0 text-center p-4 animate-on-scroll">
+                            <div class="mb-3">
+                                <div class="value-icon-container icon-world">
+                                </div>
+                            </div>
+                            <h3 class="h4 text-light mb-3">Inclusión</h3>
+                            <p class="text-light opacity-75">Un espacio abierto para todos, promoviendo el acceso a
+                                la
+                                cultura sin distinciones.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion for More Info -->
+                    <div class="row mt-5">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="accordion about-accordion animate-on-scroll" id="accordionValues">
+                                <div class="accordion-item accordion-item-custom">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button collapsed accordion-button-custom" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                            aria-expanded="false" aria-controls="collapseOne">
+                                            <strong>¿Cuál es nuestra Misión?</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionValues">
+                                        <div class="accordion-body accordion-body-custom">
+                                            Nuestra misión es conservar, estudiar y difundir el patrimonio artístico
+                                            mexicano, abarcando desde el virreinato hasta la primera mitad del siglo XX.
+                                            Nos dedicamos a ofrecer experiencias educativas y estéticas significativas,
+                                            promoviendo el diálogo entre el pasado y el presente para fortalecer la
+                                            identidad cultural de nuestros visitantes.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item accordion-item-custom-top-0">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed accordion-button-custom" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            <strong>¿Cómo apoyar al museo?</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordionValues">
+                                        <div class="accordion-body accordion-body-custom">
+                                            Existen diversas formas de contribuir al crecimiento del museo. Puedes
+                                            unirte
+                                            al programa "Amigos del MUNAL" para disfrutar de beneficios exclusivos,
+                                            realizar donativos para la restauración de obras, o participar en nuestros
+                                            voluntariados educativos y culturales. Tu apoyo es vital para mantener viva
+                                            la historia del arte en México.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item accordion-item-custom-top-0">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed accordion-button-custom" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            <strong>Horarios y Visitas</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionValues">
+                                        <div class="accordion-body accordion-body-custom">
+                                            Abrimos de Martes a Domingo de 10:00 a.m. a 5:30 p.m. Ofrecemos visitas
+                                            guiadas virtuales y
+                                            presenciales para grupos escolares y turistas.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- Nuestro Equipo -->
+        <section class="py-5 section-dark">
+            <div class="container">
+                <h2 class="text-center mb-5 section-title animate-on-scroll">Nuestro
+                    Equipo
+                </h2>
+                <div class="row g-4 justify-content-center">
+                    <!-- Team Member 1 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card bg-dark border-0 shadow-lg h-100 team-card animate-on-scroll">
+                            <img src="/assets/imgs/about/vale.jpg" class="card-img-top team-img"
+                                alt="Guillén Hernández Valeria Guadalupe">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-light team-name">
+                                    Guillén Hernández Valeria Guadalupe</h5>
+                                <p class="card-text text-muted small">Directora General</p>
+                                <div class="mt-3">
+                                    <a href="https://www.instagram.com/katsu_val/" target="_blank"
+                                        class="btn btn-sm btn-outline-light rounded-circle me-1 social-btn">
+                                        <div class="social-icon-container icon-instagram">
+                                        </div>
+                                    </a>
+                                    <a href="https://github.com/Val05Lun" target="_blank"
+                                        class="btn btn-sm btn-outline-light rounded-circle social-btn">
+                                        <div class="social-icon-container icon-github">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card bg-dark border-0 shadow-lg h-100 team-card animate-on-scroll">
+                            <img src="/assets/imgs/about/clove.jpg" class="card-img-top team-img"
+                                alt="Ocampo Gonzalez Jan Alexis">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-light team-name">
+                                    Ocampo Gonzalez Jan Alexis</h5>
+                                <p class="card-text text-muted small">Curador en Jefe</p>
+                                <div class="mt-3">
+                                    <a href="https://www.instagram.com/janocampeco/" target="_blank"
+                                        class="btn btn-sm btn-outline-light rounded-circle me-1 social-btn">
+                                        <div class="social-icon-container icon-instagram">
+                                        </div>
+                                    </a>
+                                    <a href="https://github.com/janogonza07" target="_blank"
+                                        class="btn btn-sm btn-outline-light rounded-circle social-btn">
+                                        <div class="social-icon-container icon-github">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card bg-dark border-0 shadow-lg h-100 team-card animate-on-scroll">
+                            <img src="/assets/imgs/about/yo.jpg" class="card-img-top team-img"
+                                alt="Sánchez Falcón César Fernando">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-light team-name">
+                                    Sánchez Falcón César Fernando</h5>
+                                <p class="card-text text-muted small">Educación y Mediación</p>
+                                <div class="mt-3">
+                                    <a href="https://www.instagram.com/fernandosfn_/" target="_blank"
+                                        class="btn btn-sm btn-outline-light rounded-circle me-1 social-btn">
+                                        <div class="social-icon-container icon-instagram">
+                                        </div>
+                                    </a>
+                                    <a href="https://github.com/fernandosfn06" target="_blank"
+                                        class="btn btn-sm btn-outline-light rounded-circle social-btn">
+                                        <div class="social-icon-container icon-github">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card bg-dark border-0 shadow-lg h-100 team-card animate-on-scroll">
+                            <img src="/assets/imgs/about/sebas.jpg" class="card-img-top team-img"
+                                alt="Vazquez Zarco Jesus Sebastian">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-light team-name">
+                                    Vazquez Zarco Jesus Sebastian</h5>
+                                <p class="card-text text-muted small">Museografía</p>
+                                <div class="mt-3">
+                                    <a href="https://www.instagram.com/its.so.naif/" target="_blank"
+                                        class="btn btn-sm btn-outline-light rounded-circle me-1 social-btn">
+                                        <div class="social-icon-container icon-instagram">
+                                        </div>
+                                    </a>
+                                    <a href="https://github.com/itsebasvz" target="_blank"
+                                        class="btn btn-sm btn-outline-light rounded-circle social-btn">
+                                        <div class="social-icon-container icon-github">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-4 text-center text-light about-footer">
+            <div class="container d-flex justify-content-between align-items-center flex-column flex-md-row">
+                <small class="mb-2 mb-md-0 footer-copy">&copy; 2025 Museo Nacional de
+                    Arte. Todos los derechos reservados.</small>
+                <div>
+                    <a href="https://www.instagram.com/munalmx/" class="text-light me-3 text-decoration-none"
+                        target="_blank">
+                        <div class="footer-icon-container icon-instagram">
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/munal.inba/?locale=es_LA"
+                        class="text-light me-3 text-decoration-none" target="_blank">
+                        <div class="footer-icon-container icon-facebook">
+                        </div>
+                    </a>
+                    <a href="https://x.com/MUNALmx" class="text-light text-decoration-none" target="_blank">
+                        <div class="footer-icon-container icon-twitter">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="/src/about.js"></script>
+</body>
+
+</html>

@@ -3,14 +3,12 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './style.css';
 import { VirtualTour } from './components/VirtualTour.js';
 
-const BASE = import.meta.env.BASE_URL;
-
 document.querySelector('#app').innerHTML = `
   <nav id="main-navbar" class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #06131B; padding: 0.5rem 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
     <div class="container-fluid">
       <!-- Left Logo: Exhibition Logo -> Index -->
-      <a class="navbar-brand" href=".">
-        <img src="${BASE}assets/icons/logo.png" alt="Exhibition Logo" class="logo-exhibition">
+      <a class="navbar-brand" href="/">
+        <img src="/assets/icons/logo.png" alt="Exhibition Logo" class="logo-exhibition">
       </a>
 
       <!-- Toggler for mobile -->
@@ -25,13 +23,16 @@ document.querySelector('#app').innerHTML = `
             <a class="nav-link active" aria-current="page" href="#" id="nav-sala-a">SALA A</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="#" id="nav-sala-b">SALA B</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">SALA B</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="#" id="nav-sala-c">SALA C</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">SALA C</a>
           </li>
           <li class="nav-item mx-3">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">CONTACTO</a>
+          </li>
+          <li class="nav-item mx-3">
+             <a class="nav-link" href="/about.html">SOBRE NOSOTROS</a>
           </li>
         </ul>
       </div>
@@ -39,10 +40,10 @@ document.querySelector('#app').innerHTML = `
       <!-- Right Logo: Munal Logo -> Modal Trigger -->
       <div class="d-flex align-items-center">
         <button id="btn-fullscreen" class="btn btn-link p-0 me-3" aria-label="Toggle Fullscreen">
-            <img src="${BASE}assets/icons/arrows-maximize.svg" alt="Fullscreen" class="icon-fullscreen">
+            <img src="/assets/icons/arrows-maximize.svg" alt="Fullscreen" class="icon-fullscreen">
         </button>
         <a href="#" data-bs-toggle="modal" data-bs-target="#munalInfoModal">
-            <img src="${BASE}assets/icons/Munal-Logo-Vector.svg-.png" alt="Munal Logo" class="logo-munal">
+            <img src="/assets/icons/Munal-Logo-Vector.svg-.png" alt="Munal Logo" class="logo-munal">
         </a>
       </div>
     </div>
@@ -150,28 +151,6 @@ const tour = new VirtualTour('tour-container');
 document.getElementById('nav-sala-a').addEventListener('click', (e) => {
   e.preventDefault();
   tour.navigate({ targetRoom: 'salaA', targetNode: 'index' });
-  // Close mobile menu if open
-  const navbarCollapse = document.getElementById('navbarNav');
-  if (navbarCollapse.classList.contains('show')) {
-    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
-    bsCollapse.hide();
-  }
-});
-
-document.getElementById('nav-sala-c').addEventListener('click', (e) => {
-  e.preventDefault();
-  tour.navigate({ targetRoom: 'salaC', targetNode: 'centro' });
-  // Close mobile menu if open
-  const navbarCollapse = document.getElementById('navbarNav');
-  if (navbarCollapse.classList.contains('show')) {
-    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
-    bsCollapse.hide();
-  }
-});
-
-document.getElementById('nav-sala-b').addEventListener('click', (e) => {
-  e.preventDefault();
-  tour.navigate({ targetRoom: 'salaB', targetNode: 'centro' });
   // Close mobile menu if open
   const navbarCollapse = document.getElementById('navbarNav');
   if (navbarCollapse.classList.contains('show')) {
