@@ -1,23 +1,25 @@
+const BASE = import.meta.env.BASE_URL;
+
 export const museumData = {
   salaA: {
     startNode: 'index',
     nodes: {
       index: {
         id: 'index',
-        image: '/assets/imgs/salaA/index.jpg',
+        image: BASE + 'assets/imgs/salaA/index.jpg',
         arrows: [
-          { direction: 'left', targetRoom: 'salaB', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-left.svg' },
-          { direction: 'up', target: 'centro', icon: '/assets/icons/arrow-narrow-up.svg' },
-          { direction: 'right', targetRoom: 'salaC', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-right.svg' }
+          { direction: 'left', targetRoom: 'salaB', targetNode: 'overview', icon: BASE + 'assets/icons/arrow-narrow-left.svg' },
+          { direction: 'up', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-up.svg' },
+          { direction: 'right', targetRoom: 'salaC', targetNode: 'overview', icon: BASE + 'assets/icons/arrow-narrow-right.svg' }
         ]
       },
       centro: {
         id: 'centro',
-        image: '/assets/imgs/salaA/centro.jpg',
+        image: BASE + 'assets/imgs/salaA/centro.jpg',
         arrows: [
-          { direction: 'down', target: 'index', icon: '/assets/icons/arrow-narrow-down.svg' },
-          { direction: 'left', targetRoom: 'salaB', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-left.svg' },
-          { direction: 'right', targetRoom: 'salaC', targetNode: 'overview', icon: '/assets/icons/arrow-narrow-right.svg' }
+          { direction: 'down', target: 'index', icon: BASE + 'assets/icons/arrow-narrow-down.svg' },
+          { direction: 'left', targetRoom: 'salaB', targetNode: 'overview', icon: BASE + 'assets/icons/arrow-narrow-left.svg' },
+          { direction: 'right', targetRoom: 'salaC', targetNode: 'overview', icon: BASE + 'assets/icons/arrow-narrow-right.svg' }
         ],
         paintings: [
           {
@@ -56,9 +58,9 @@ export const museumData = {
       },
       izquierda: {
         id: 'izquierda',
-        image: '/assets/imgs/salaA/izquierda.jpg',
+        image: BASE + 'assets/imgs/salaA/izquierda.jpg',
         arrows: [
-          { direction: 'right', target: 'index', icon: '/assets/icons/arrow-narrow-right.svg' }
+          { direction: 'right', target: 'index', icon: BASE + 'assets/icons/arrow-narrow-right.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -99,9 +101,9 @@ export const museumData = {
       },
       derecha: {
         id: 'derecha',
-        image: '/assets/imgs/salaA/derecha.jpg',
+        image: BASE + 'assets/imgs/salaA/derecha.jpg',
         arrows: [
-          { direction: 'left', target: 'index', icon: '/assets/icons/arrow-narrow-left.svg' }
+          { direction: 'left', target: 'index', icon: BASE + 'assets/icons/arrow-narrow-left.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -125,7 +127,7 @@ export const museumData = {
                 <p>Fue director del Museo de Arte Moderno de México entre 1962 y 1964. Sus obras se expusieron tanto en México como en el extranjero: en concreto, participó en las bienales XXIX de Venecia en 1958 y XV de la Acuarela Internacional de Pittsburg en 1968. Sus últimas exposiciones tuvieron lugar en el Museo de Arte Contemporáneo de Monterrey, en 1978 y 1980, año en el que fue premiado con Premio Nacional de Ciencias y Artes en el área de Bellas Artes. Murió en 1984, en la Ciudad de México.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/CarlosOrozco.png" class="img-fluid rounded shadow-lg w-100" alt="Carlos Orozco Romero">
+                <img src=BASE + "assets/imgs/salaA/CarlosOrozco.png" class="img-fluid rounded shadow-lg w-100" alt="Carlos Orozco Romero">
               </div>
             </div>
           `
@@ -133,10 +135,10 @@ export const museumData = {
       },
       centro_izquierda: {
         id: 'centro_izquierda',
-        image: '/assets/imgs/salaA/centro_izquierda.jpg',
+        image: BASE + 'assets/imgs/salaA/centro_izquierda.jpg',
         arrows: [
-          { direction: 'right', target: 'centro', icon: '/assets/icons/arrow-narrow-right.svg' },
-          { direction: 'left', target: 'izquierda', icon: '/assets/icons/arrow-narrow-left.svg' } // Logic check: from center-left, left goes to left wall?
+          { direction: 'right', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-right.svg' },
+          { direction: 'left', target: 'izquierda', icon: BASE + 'assets/icons/arrow-narrow-left.svg' } // Logic check: from center-left, left goes to left wall?
         ],
         paintings: [],
         infoSection: {
@@ -155,7 +157,7 @@ export const museumData = {
                 <p>Este retrato es también un documento histórico: Novo tenía apenas alrededor de 18 años cuando posó para Ángel, y la pintura refleja el espíritu juvenil, intelectual y vanguardista que caracterizó a la generación de artistas y escritores de la época.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/AbrahamCard.png" class="img-fluid rounded shadow-lg w-100" alt="Abraham Ángel Card Valdés">
+                <img src=BASE + "assets/imgs/salaA/AbrahamCard.png" class="img-fluid rounded shadow-lg w-100" alt="Abraham Ángel Card Valdés">
               </div>
             </div>
           `
@@ -164,10 +166,10 @@ export const museumData = {
       // Note: 'centro-derecha.jpg' exists in assets, let's add it
       centro_derecha: {
         id: 'centro_derecha',
-        image: '/assets/imgs/salaA/centro-derecha.jpg',
+        image: BASE + 'assets/imgs/salaA/centro-derecha.jpg',
         arrows: [
-          { direction: 'left', target: 'centro', icon: '/assets/icons/arrow-narrow-left.svg' },
-          { direction: 'right', target: 'derecha', icon: '/assets/icons/arrow-narrow-right.svg' }
+          { direction: 'left', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-left.svg' },
+          { direction: 'right', target: 'derecha', icon: BASE + 'assets/icons/arrow-narrow-right.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -186,7 +188,7 @@ export const museumData = {
                 <p>Este cuadro es uno de los más conocidos de Abraham Ángel porque muestra su estilo puro: sensibilidad, introspección y una mezcla entre inocencia y modernidad. Además, es una de las últimas obras que realizó antes de su muerte, lo que le da un valor histórico y emocional adicional.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/AbrahamCard.png" class="img-fluid rounded shadow-lg w-100" alt="Abraham Ángel Card Valdés">
+                <img src=BASE + "assets/imgs/salaA/AbrahamCard.png" class="img-fluid rounded shadow-lg w-100" alt="Abraham Ángel Card Valdés">
               </div>
             </div>
           `
@@ -199,29 +201,29 @@ export const museumData = {
     nodes: {
       overview: {
         id: 'overview',
-        image: '/assets/imgs/salaB/planocentralB.jpg',
+        image: BASE + 'assets/imgs/salaB/planocentralB.jpg',
         arrows: [
-          { direction: 'left', target: 'izquierda', icon: '/assets/icons/arrow-narrow-up.svg' },
-          { direction: 'right', target: 'centro', icon: '/assets/icons/arrow-narrow-up.svg' },
-          { direction: 'down', targetRoom: 'salaA', targetNode: 'index', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'left', target: 'izquierda', icon: BASE + 'assets/icons/arrow-narrow-up.svg' },
+          { direction: 'right', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-up.svg' },
+          { direction: 'down', targetRoom: 'salaA', targetNode: 'index', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ]
       },
       centro: {
         id: 'centro',
-        image: '/assets/imgs/salaB1/planocentral.jpg',
+        image: BASE + 'assets/imgs/salaB1/planocentral.jpg',
         arrows: [
-          { direction: 'down', target: 'overview', icon: '/assets/icons/arrow-narrow-down.svg' },
-          { direction: 'up', target: 'centro_wall', icon: '/assets/icons/arrow-narrow-up.svg' },
-          { direction: 'left', target: 'izquierda_centro', icon: '/assets/icons/arrow-narrow-left.svg' },
-          { direction: 'right', target: 'derecha_central', icon: '/assets/icons/arrow-narrow-right.svg' }
+          { direction: 'down', target: 'overview', icon: BASE + 'assets/icons/arrow-narrow-down.svg' },
+          { direction: 'up', target: 'centro_wall', icon: BASE + 'assets/icons/arrow-narrow-up.svg' },
+          { direction: 'left', target: 'izquierda_centro', icon: BASE + 'assets/icons/arrow-narrow-left.svg' },
+          { direction: 'right', target: 'derecha_central', icon: BASE + 'assets/icons/arrow-narrow-right.svg' }
         ],
         paintings: []
       },
       centro_wall: {
         id: 'centro_wall',
-        image: '/assets/imgs/salaB1/centro.jpg',
+        image: BASE + 'assets/imgs/salaB1/centro.jpg',
         arrows: [
-          { direction: 'down', target: 'centro', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -239,7 +241,7 @@ export const museumData = {
                 <p>Aunque Siqueiros es conocido principalmente por sus murales monumentales, esta obra demuestra su fuerza expresiva incluso en formatos más pequeños. El uso de piroxilina, un material industrial, muestra su interés en técnicas modernas y en experimentar más allá del óleo tradicional. La composición intensifica la sensación de dinamismo y carácter combativo del artista.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
+                <img src=BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
               </div>
             </div>
           `
@@ -247,9 +249,9 @@ export const museumData = {
       },
       izquierda_centro: {
         id: 'izquierda_centro',
-        image: '/assets/imgs/salaB1/izquierda.jpg',
+        image: BASE + 'assets/imgs/salaB1/izquierda.jpg',
         arrows: [
-          { direction: 'right', target: 'centro', icon: '/assets/icons/arrow-narrow-right.svg' }
+          { direction: 'right', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-right.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -269,7 +271,7 @@ export const museumData = {
                 <p>La obra representa tanto una relación personal —laboral y de confianza entre el artista y la galerista— como una manifestación de la modernidad urbana y un momento de transición en el arte mexicano, cuando se empezaban a incorporar influencias internacionales en el contexto posrevolucionario.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
+                <img src=BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
               </div>
             </div>
           `
@@ -277,9 +279,9 @@ export const museumData = {
       },
       derecha_central: {
         id: 'derecha_central',
-        image: '/assets/imgs/salaB1/derecha_central.jpg',
+        image: BASE + 'assets/imgs/salaB1/derecha_central.jpg',
         arrows: [
-          { direction: 'left', target: 'centro', icon: '/assets/icons/arrow-narrow-left.svg' }
+          { direction: 'left', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-left.svg' }
         ],
         paintings: [
           { id: 'cuadro_izq', x: 27, y: 49, w: 23, h: 56, targetNode: 'derecha_central_izq' },
@@ -288,9 +290,9 @@ export const museumData = {
       },
       derecha_central_izq: {
         id: 'derecha_central_izq',
-        image: '/assets/imgs/salaB1/izquierda_d.jpg',
+        image: BASE + 'assets/imgs/salaB1/izquierda_d.jpg',
         arrows: [
-          { direction: 'down', target: 'derecha_central', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'derecha_central', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -311,7 +313,7 @@ export const museumData = {
                 <p>Hoy es considerada una pieza clave para entender el desarrollo del arte político en México, y una de las representaciones más potentes de la maternidad desde una perspectiva social y revolucionaria.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
+                <img src=BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
               </div>
             </div>
           `
@@ -319,9 +321,9 @@ export const museumData = {
       },
       derecha_central_der: {
         id: 'derecha_central_der',
-        image: '/assets/imgs/salaB1/derecha_d.jpg',
+        image: BASE + 'assets/imgs/salaB1/derecha_d.jpg',
         arrows: [
-          { direction: 'down', target: 'derecha_central', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'derecha_central', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -339,7 +341,7 @@ export const museumData = {
                 <p>El uso de colores intensos, contrastes marcados y texturas dinámicas refleja el estilo expresivo y enérgico característico de Siqueiros. Aunque más conocido por sus murales, esta obra demuestra su habilidad en formatos de caballete sin perder la fuerza ideológica y emocional.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
+                <img src=BASE + "assets/imgs/salaA/DavidSiquieros.png" class="img-fluid rounded shadow-lg w-100" alt="David Alfaro Siqueiros">
               </div>
             </div>
           `
@@ -347,10 +349,10 @@ export const museumData = {
       },
       izquierda: {
         id: 'izquierda',
-        image: '/assets/imgs/salaB/plano_izquierda.jpg',
+        image: BASE + 'assets/imgs/salaB/plano_izquierda.jpg',
         arrows: [
-          { direction: 'right', target: 'overview', icon: '/assets/icons/arrow-narrow-right.svg' },
-          { direction: 'down', target: 'overview', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'right', target: 'overview', icon: BASE + 'assets/icons/arrow-narrow-right.svg' },
+          { direction: 'down', target: 'overview', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [
           { id: 'cuadro_izq', x: 22, y: 42, w: 24, h: 50, targetNode: 'izquierda_cuadro_izq' },
@@ -359,9 +361,9 @@ export const museumData = {
       },
       izquierda_cuadro_izq: {
         id: 'izquierda_cuadro_izq',
-        image: '/assets/imgs/salaB/izquierda.jpg',
+        image: BASE + 'assets/imgs/salaB/izquierda.jpg',
         arrows: [
-          { direction: 'down', target: 'izquierda', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'izquierda', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -381,7 +383,7 @@ export const museumData = {
                 <p>Esta obra es considerada un aporte significativo al acervo nacional por su calidad, su historia y el momento vital en que fue creada.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
+                <img src=BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
               </div>
             </div>
           `
@@ -389,9 +391,9 @@ export const museumData = {
       },
       izquierda_cuadro_der: {
         id: 'izquierda_cuadro_der',
-        image: '/assets/imgs/salaB/derecha.jpg',
+        image: BASE + 'assets/imgs/salaB/derecha.jpg',
         arrows: [
-          { direction: 'down', target: 'izquierda', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'izquierda', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -412,7 +414,7 @@ export const museumData = {
                 <p>La Molendera es considerada una obra clave porque anticipa el estilo que Rivera consolidaría en sus murales: figuras monumentales, raíces indígenas, y una profunda valoración del pueblo mexicano como cimiento de la nueva identidad nacional.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
+                <img src=BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
               </div>
             </div>
           `
@@ -425,28 +427,28 @@ export const museumData = {
     nodes: {
       overview: {
         id: 'overview',
-        image: '/assets/imgs/salaC/planocentralC.jpg',
+        image: BASE + 'assets/imgs/salaC/planocentralC.jpg',
         arrows: [
-          { direction: 'down', targetRoom: 'salaA', targetNode: 'index', icon: '/assets/icons/arrow-narrow-down.svg' },
-          { direction: 'left', target: 'centro', icon: '/assets/icons/arrow-narrow-up.svg' },
-          { direction: 'right', target: 'derecha', icon: '/assets/icons/arrow-narrow-up.svg' }
+          { direction: 'down', targetRoom: 'salaA', targetNode: 'index', icon: BASE + 'assets/icons/arrow-narrow-down.svg' },
+          { direction: 'left', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-up.svg' },
+          { direction: 'right', target: 'derecha', icon: BASE + 'assets/icons/arrow-narrow-up.svg' }
         ]
       },
       centro: {
         id: 'centro',
-        image: '/assets/imgs/salaC1/centro.jpg',
+        image: BASE + 'assets/imgs/salaC1/centro.jpg',
         arrows: [
-          { direction: 'down', target: 'overview', icon: '/assets/icons/arrow-narrow-down.svg' },
-          { direction: 'left', target: 'izquierda_central', icon: '/assets/icons/arrow-narrow-left.svg' },
-          { direction: 'up', target: 'retratocentro', icon: '/assets/icons/arrow-narrow-up.svg' }
+          { direction: 'down', target: 'overview', icon: BASE + 'assets/icons/arrow-narrow-down.svg' },
+          { direction: 'left', target: 'izquierda_central', icon: BASE + 'assets/icons/arrow-narrow-left.svg' },
+          { direction: 'up', target: 'retratocentro', icon: BASE + 'assets/icons/arrow-narrow-up.svg' }
         ],
         paintings: []
       },
       izquierda_central: {
         id: 'izquierda_central',
-        image: '/assets/imgs/salaC1/izquierda_central.jpg',
+        image: BASE + 'assets/imgs/salaC1/izquierda_central.jpg',
         arrows: [
-          { direction: 'down', target: 'centro', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [
           { id: 'cuadro_izq', x: 50, y: 44, w: 23, h: 57, targetNode: 'izquierda_central_izq' },
@@ -455,9 +457,9 @@ export const museumData = {
       },
       izquierda_central_izq: {
         id: 'izquierda_central_izq',
-        image: '/assets/imgs/salaC1/izquierda.jpeg',
+        image: BASE + 'assets/imgs/salaC1/izquierda.jpeg',
         arrows: [
-          { direction: 'down', target: 'izquierda_central', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'izquierda_central', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -476,7 +478,7 @@ export const museumData = {
                 <p>La obra destaca por su fuerte carga emocional y por su representación dignificada del indígena, rompiendo con la visión heroica tradicional de la Conquista. Es considerada una de las primeras aproximaciones en la pintura mexicana a una visión más empática de la historia indígena. También demuestra el dominio académico de Félix Parra y su interés por temas históricos nacionales.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/FelixParra.png" class="img-fluid rounded shadow-lg w-100" alt="Félix Parra">
+                <img src=BASE + "assets/imgs/salaA/FelixParra.png" class="img-fluid rounded shadow-lg w-100" alt="Félix Parra">
               </div>
             </div>
           `
@@ -484,9 +486,9 @@ export const museumData = {
       },
       izquierda_central_der: {
         id: 'izquierda_central_der',
-        image: '/assets/imgs/salaC1/derecha.jpeg',
+        image: BASE + 'assets/imgs/salaC1/derecha.jpeg',
         arrows: [
-          { direction: 'down', target: 'izquierda_central', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'izquierda_central', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -505,7 +507,7 @@ export const museumData = {
                 <p>Esta obra, junto con el resto de la serie, marca un cambio importante en la pintura mexicana del siglo XIX, al presentar una visión crítica y humanista de la historia. “El desmembrado (cadáver)” es relevante por su valentía temática, ya que rompe con la tendencia académica de glorificar la conquista y en su lugar revela sus aspectos más dolorosos. Félix Parra es considerado precursor del indigenismo pictórico que, décadas más tarde, retomarían artistas como Orozco o Rivera.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/FelixParra.png" class="img-fluid rounded shadow-lg w-100" alt="Félix Parra">
+                <img src=BASE + "assets/imgs/salaA/FelixParra.png" class="img-fluid rounded shadow-lg w-100" alt="Félix Parra">
               </div>
             </div>
           `
@@ -513,9 +515,9 @@ export const museumData = {
       },
       retratocentro: {
         id: 'retratocentro',
-        image: '/assets/imgs/salaC1/retratocentro.jpg',
+        image: BASE + 'assets/imgs/salaC1/retratocentro.jpg',
         arrows: [
-          { direction: 'down', target: 'centro', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'centro', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -538,7 +540,7 @@ export const museumData = {
                 </ul>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/ArmandoJulio.png" class="img-fluid rounded shadow-lg w-100" alt="Armando Reverón">
+                <img src=BASE + "assets/imgs/salaA/ArmandoJulio.png" class="img-fluid rounded shadow-lg w-100" alt="Armando Reverón">
               </div>
             </div>
           `
@@ -546,9 +548,9 @@ export const museumData = {
       },
       derecha: {
         id: 'derecha',
-        image: '/assets/imgs/salaC/planoderecha.jpg',
+        image: BASE + 'assets/imgs/salaC/planoderecha.jpg',
         arrows: [
-          { direction: 'left', target: 'overview', icon: '/assets/icons/arrow-narrow-left.svg' }
+          { direction: 'left', target: 'overview', icon: BASE + 'assets/icons/arrow-narrow-left.svg' }
         ],
         paintings: [
           {
@@ -565,9 +567,9 @@ export const museumData = {
       },
       derecha_cuadro_izq: {
         id: 'derecha_cuadro_izq',
-        image: '/assets/imgs/salaC/izquierda.jpg',
+        image: BASE + 'assets/imgs/salaC/izquierda.jpg',
         arrows: [
-          { direction: 'down', target: 'derecha', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'derecha', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -590,7 +592,7 @@ export const museumData = {
                 <p>La obra forma parte del enfoque realista y social que caracteriza gran parte del trabajo de Rivera, mostrando la identidad y cultura mexicana a través de personajes comunes y escenas tradicionales.</p>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
+                <img src=BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
               </div>
             </div>
           `
@@ -598,9 +600,9 @@ export const museumData = {
       },
       derecha_cuadro_der: {
         id: 'derecha_cuadro_der',
-        image: '/assets/imgs/salaC/derecha.jpg',
+        image: BASE + 'assets/imgs/salaC/derecha.jpg',
         arrows: [
-          { direction: 'down', target: 'derecha', icon: '/assets/icons/arrow-narrow-down.svg' }
+          { direction: 'down', target: 'derecha', icon: BASE + 'assets/icons/arrow-narrow-down.svg' }
         ],
         paintings: [],
         infoSection: {
@@ -622,7 +624,7 @@ export const museumData = {
                 </ul>
               </div>
               <div class="col-lg-3">
-                <img src="/assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
+                <img src=BASE + "assets/imgs/salaA/DiegoRivera.png" class="img-fluid rounded shadow-lg w-100" alt="Diego Rivera">
               </div>
             </div>
           `
