@@ -9,7 +9,7 @@ document.querySelector('#app').innerHTML = `
   <nav id="main-navbar" class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #06131B; padding: 0.5rem 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
     <div class="container-fluid">
       <!-- Left Logo: Exhibition Logo -> Index -->
-      <a class="navbar-brand" href=".">
+      <a class="navbar-brand" href="#" id="nav-logo">
         <img src="${BASE}assets/icons/logo.png" alt="Exhibition Logo" class="logo-exhibition">
       </a>
 
@@ -445,6 +445,12 @@ function showTour(room, node) {
 
 // Wire up Navbar Links
 document.getElementById('nav-sala-a').addEventListener('click', (e) => {
+  e.preventDefault();
+  showTour('salaA', 'index');
+  closeMobileMenu();
+});
+
+document.getElementById('nav-logo').addEventListener('click', (e) => {
   e.preventDefault();
   showTour('salaA', 'index');
   closeMobileMenu();
