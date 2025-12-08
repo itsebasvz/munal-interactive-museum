@@ -225,11 +225,6 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
-.painting-hotspot:hover {
-  /* box-shadow removed as per user request */
-  /* border: 1px solid rgba(255, 215, 0, 0.4); Optional border */
-}
-
 .hotspot-glow {
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
   border: 1px solid rgba(255, 215, 0, 0.8);
